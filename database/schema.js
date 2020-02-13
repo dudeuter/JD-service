@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://database:27017/graph', { useNewUrlParser: true, useUnifiedTopology: true })
-  .catch(err => console.log(err));
+mongoose.connect('mongodb://localhost:27017/graph', { useNewUrlParser: true, useUnifiedTopology: true })
+  .catch((err) => console.log(err));
 const { Schema } = mongoose;
 const db = mongoose.connection;
 db.dropDatabase();
@@ -31,7 +31,6 @@ const graphSchema = new Schema({
 });
 
 const Graph = mongoose.model('Graph', graphSchema);
-
 
 const save = (callback) => {
   Graph.insertMany(data.generateGraph(1))

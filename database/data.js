@@ -50,7 +50,7 @@ function addComa(number) {
 function generateRange(number) {
   if (number < 1000000) {
     return addComa(parseInt(number / 1000, 10) * 1000);
-  } return (parseInt(number / 10000, 10) / 100).toFixed(2) + 'M';
+  } return `${(parseInt(number / 10000, 10) / 100).toFixed(2)}M`;
 }
 
 const generateGraph = (num) => {
